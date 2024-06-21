@@ -1,3 +1,5 @@
+/*"Si siempre intentas ser normal, nunca descubrirás lo extraordinario que puedes llegar a ser." (Maya Angelou)*/
+
 //variables
 let numeroAzar = parseInt(prompt('Elige un rango de numeros para jugar: '));
 let numeroSecreto = Math.floor(Math.random()*numeroAzar)+1;
