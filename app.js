@@ -1,14 +1,11 @@
 //variables
-let numeroAzar = 0;
-
+let numeroAzar = parseInt(prompt('Elige un rango de numeros para jugar: '));
 let numeroSecreto = Math.floor(Math.random()*numeroAzar)+1;
 let numeroUsuario = 0;
 let intentos = 1;
 let maximosIntentos = 3;
 
 console.log('El número secreto elegido es: ', numeroSecreto);
-
-numeroAzar = parseInt(prompt('Elije el rango en el que quieres adivinar el numero, puede ser 1/10 o 1/100, etc.'));
 
 //bucle while "Mientras"
 while(numeroUsuario != numeroSecreto){
