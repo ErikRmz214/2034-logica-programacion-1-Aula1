@@ -1,11 +1,35 @@
-let numeroSecreto = 6;
-let numeroUsuario = prompt("Piensa en un número entre 1 y 10, y escribelo porfavor: ");
+//variables
+let numeroAzar = 0;
 
-console.log(numeroUsuario);
+let numeroSecreto = Math.floor(Math.random()*numeroAzar)+1;
+let numeroUsuario = 0;
+let intentos = 1;
+let maximosIntentos = 3;
 
-if(numeroUsuario == numeroSecreto){
-    alert('Acertaste el número!');
-}
-else{
-    alert('Lo siento no acertaste el número')
-}
+console.log('El número secreto elegido es: ', numeroSecreto);
+
+numeroAzar = parseInt(prompt('Elije el rango en el que quieres adivinar el numero, puede ser 1/10 o 1/100, etc.'));
+
+//bucle while "Mientras"
+while(numeroUsuario != numeroSecreto){
+    numeroUsuario = parseInt(prompt(`Elige un numero entre 1 y ${numeroAzar}, y escribelo porfavor: `));
+    console.log(typeof('numero del intento: ', numeroUsuario));
+
+    //En esta parte del codigo se realiza la comparacion.
+
+    if(numeroUsuario == numeroSecreto){
+    /*Usa comilla invertida `` para la lectura de la variable y añadimos ${variable} para que sea leida */
+        alert(`Acertaste, el numero es: ${numeroUsuario}, usted gano en ${intentos} ${intentos == 1 ? 'intento' : 'intentos'}!`);//${intentos == 1 ? 'intento' : 'intentos'} una forma de sintetizar el codigo, quitando variables
+    } else if(numeroUsuario > numeroSecreto){
+    alert('El numero es menor');
+    } else if(numeroUsuario < numeroSecreto){
+        alert('El numero es mayor');
+    }
+    //incremento de contador cuando no se acierta
+    intentos++;
+
+    if(intentos > maximosIntentos){
+        alert(`Llegaste al número maximo de ${maximosIntentos} intentos.`);
+        break;
+    }
+};
